@@ -1,14 +1,18 @@
 
 # EVERSpatDat
 
+<!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
 ## Table of Contents
 
 - [Introduction](#intro)
 - [Citing package](#cite)
 - [Installation](#install)
 - [Example](#example)
-  - [tmap](%22#tmapExample)
-  - [sf](#sfExample)
 
 ## Introduction
 
@@ -22,23 +26,22 @@ area map repository.
 
 ``` r
 citation('EVERSpatDat')
+#> 
+#> To cite package 'EVERSpatDat' in publications use:
+#> 
+#>   Paul Julian (2024). EVERSpatDat: Everglades Spatial Data. R package
+#>   version 0.1.0. https://github.com/SwampThingPaul/EVERSpatDat
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {EVERSpatDat: Everglades Spatial Data},
+#>     author = {Paul Julian},
+#>     year = {2024},
+#>     note = {R package version 0.1.0},
+#>     url = {https://github.com/SwampThingPaul/EVERSpatDat},
+#>   }
 ```
-
-    ## 
-    ## To cite package 'EVERSpatDat' in publications use:
-    ## 
-    ##   Paul Julian (2024). EVERSpatDat: Everglades Spatial Data. R package
-    ##   version 0.1.0. https://github.com/SwampThingPaul/EVERSpatDat
-    ## 
-    ## A BibTeX entry for LaTeX users is
-    ## 
-    ##   @Manual{,
-    ##     title = {EVERSpatDat: Everglades Spatial Data},
-    ##     author = {Paul Julian},
-    ##     year = {2024},
-    ##     note = {R package version 0.1.0},
-    ##     url = {https://github.com/SwampThingPaul/EVERSpatDat},
-    ##   }
 
 ## Installation <a name="install"></a>
 
@@ -141,7 +144,7 @@ map.leg <- tm_graticules(lines = FALSE,labels.size = 0.8) +
 main.map+map.leg
 ```
 
-<img src="README_files/figure-gfm/FCELTER Map-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-FCELTER Map-1.png" style="display: block; margin: auto;" />
 
 <br>
 
@@ -180,8 +183,8 @@ plot(st_geometry(FWCShore_clip),
 plot(st_geometry(sloughs),add=T,col=c("grey80","grey59"),border=NA)
 plot(st_geometry(ENP),add=T,lty=2,col=NA)
 plot(st_geometry(US41_US1),add=T,col="red",lwd=1)
-plot(st_geometry(TTBridge),add=T,col="yellow",lwd=3,lend=2)
 plot(st_geometry(canals),add=T,col="blue",lwd=0.75)
+plot(st_geometry(TTBridge),add=T,col="yellow",lwd=3,lend=2)
 plot(st_geometry(SaltExtent),add=T,col="darkturquoise",lwd=3)
 plot(st_geometry(FCELTER_sites),add=T,pch=19,cex=1.25)
 mapmisc::scaleBar(crs=FWCShore_clip,"bottomright",bty="n",cex=1,seg.len=4,outer=F)
@@ -220,6 +223,6 @@ legend("center",
        pt.cex=2,ncol=1,cex=0.8,bty="n",y.intersp=1.2,x.intersp=0.75,xpd=NA,xjust=0.5,yjust=0.5)
 ```
 
-<img src="README_files/figure-gfm/FCELTER Map in SF-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-FCELTER Map in SF-1.png" style="display: block; margin: auto;" />
 
 ------------------------------------------------------------------------

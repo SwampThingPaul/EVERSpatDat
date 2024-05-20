@@ -7,10 +7,18 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,
                       warning=F,
-                      message=F)
+                      message=F,
+                      collapse = TRUE,
+                      comment = "#>",
+                      fig.path = "man/figures/README-")
 ```
 
 # EVERSpatDat
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
 
 ## Table of Contents
 
@@ -18,8 +26,6 @@ knitr::opts_chunk$set(echo = TRUE,
 * [Citing package](#cite)
 * [Installation](#install)
 * [Example](#example)
-  * [tmap]("#tmapExample)
-  * [sf](#sfExample)
 
 ## Introduction
 As more and more spatial data is becoming available this package was intended to be a single source of general spatial data inspired by the Florida Coastal Everglades Long Term Ecological Research Site [FCE LTER](https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base) study area map repository.
@@ -166,8 +172,8 @@ plot(st_geometry(FWCShore_clip),
 plot(st_geometry(sloughs),add=T,col=c("grey80","grey59"),border=NA)
 plot(st_geometry(ENP),add=T,lty=2,col=NA)
 plot(st_geometry(US41_US1),add=T,col="red",lwd=1)
-plot(st_geometry(TTBridge),add=T,col="yellow",lwd=3,lend=2)
 plot(st_geometry(canals),add=T,col="blue",lwd=0.75)
+plot(st_geometry(TTBridge),add=T,col="yellow",lwd=3,lend=2)
 plot(st_geometry(SaltExtent),add=T,col="darkturquoise",lwd=3)
 plot(st_geometry(FCELTER_sites),add=T,pch=19,cex=1.25)
 mapmisc::scaleBar(crs=FWCShore_clip,"bottomright",bty="n",cex=1,seg.len=4,outer=F)
