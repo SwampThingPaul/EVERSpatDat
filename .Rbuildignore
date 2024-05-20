@@ -1,0 +1,17 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+
+^Meta$
+^doc$
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+
+^build.R
+
+^pkgdown$
+^_pkgdown\.yml$
+
+
+^data-raw\.*$
+^maps_FCE_sites_grayscale_base-main\.*$

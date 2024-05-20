@@ -1,0 +1,20 @@
+Package: EVERSpatDat
+Type: Package
+Title: Everglades Spatial Data
+Version: 0.1.0
+Date: 2024-05-14
+Authors@R: c(person("Paul", "Julian", role = c("aut", "cre"), 
+    email = "pauljulianphd@gmail.com", comment = c(ORCID = "0000-0002-7617-1354")))
+Maintainer: Paul Julian <pauljulianphd@gmail.com>
+Description: This package contains spatial data to generate maps and conduct spatial analyses in the Everglades Ecosystem
+URL: https://github.com/SwampThingPaul/EVERSpatDat
+BugReports: https://github.com/SwampThingPaul/EVERSpatDat/issues
+License: MIT
+Depends: R (>= 4.0)
+Suggests:
+    sf (>= 1.0.0)
+Encoding: UTF-8
+LazyData: true
+LazyDataCompression: xz
+RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
