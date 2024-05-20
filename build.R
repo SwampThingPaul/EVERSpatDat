@@ -36,7 +36,7 @@ devtools::document()
 pkgdown::build_site()
 
 ## Builds package
-devtools::build(vignettes=F)
+# devtools::build(vignettes=F)
 # devtools::build()
 
 # -------------------------------------------------------------------------

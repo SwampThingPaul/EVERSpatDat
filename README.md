@@ -13,6 +13,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 - [Citing package](#cite)
 - [Installation](#install)
 - [Example](#example)
+- [List of Spatial Data](#datalist)
 
 ## Introduction
 
@@ -26,21 +27,21 @@ area map repository.
 
 ``` r
 citation('EVERSpatDat')
-#> 
-#> To cite package 'EVERSpatDat' in publications use:
-#> 
-#>   Paul Julian (2024). EVERSpatDat: Everglades Spatial Data. R package
-#>   version 0.1.0. https://github.com/SwampThingPaul/EVERSpatDat
-#> 
-#> A BibTeX entry for LaTeX users is
-#> 
-#>   @Manual{,
-#>     title = {EVERSpatDat: Everglades Spatial Data},
-#>     author = {Paul Julian},
-#>     year = {2024},
-#>     note = {R package version 0.1.0},
-#>     url = {https://github.com/SwampThingPaul/EVERSpatDat},
-#>   }
+## 
+## To cite package 'EVERSpatDat' in publications use:
+## 
+##   Paul Julian (2024). EVERSpatDat: Everglades Spatial Data. R package
+##   version 0.1.0. https://github.com/SwampThingPaul/EVERSpatDat
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Manual{,
+##     title = {EVERSpatDat: Everglades Spatial Data},
+##     author = {Paul Julian},
+##     year = {2024},
+##     note = {R package version 0.1.0},
+##     url = {https://github.com/SwampThingPaul/EVERSpatDat},
+##   }
 ```
 
 ## Installation <a name="install"></a>
@@ -55,7 +56,181 @@ devtools::install_github("SwampThingPaul/EVERSpatDat")
 Currently there are no plans to send ths package to CRAN. However, in
 the future that could change.
 
+## List of Spatial Data
+
+``` r
+datalist<-data(package = "EVERSpatDat"); # see a list of the dataset
+```
+
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Item
+</th>
+<th style="text-align:left;">
+Title
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+BBSEERBound
+</td>
+<td style="text-align:left;">
+Biscayne Bay and Southeastern Everglades Ecosystem Restoration Project
+Boundary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EvPA
+</td>
+<td style="text-align:left;">
+Everglades Protection Area Boundary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FCELTER_sites
+</td>
+<td style="text-align:left;">
+FCE LTER long-term monitoring sites
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FWCShore_clip
+</td>
+<td style="text-align:left;">
+Florida Shoreline 1:12000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LOK
+</td>
+<td style="text-align:left;">
+Generalized Lake Okeechobee Boundary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SFWMD_Projects
+</td>
+<td style="text-align:left;">
+South Florida Water Management District Projects
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SaltExtent
+</td>
+<td style="text-align:left;">
+Inland Extent of Saltwater (2018)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TTBridge
+</td>
+<td style="text-align:left;">
+Tamiami Trail Bridges
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TribalAreas
+</td>
+<td style="text-align:left;">
+Florida Tribal Areas
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US41_US1
+</td>
+<td style="text-align:left;">
+Major Roads for FCE LTER
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WCAs
+</td>
+<td style="text-align:left;">
+SFWMD Water Conservation Areas
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WERPBound
+</td>
+<td style="text-align:left;">
+Western Everglades Restoration Project Boundary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+canals
+</td>
+<td style="text-align:left;">
+South Florida Water Management District Canals
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nps_clipped
+</td>
+<td style="text-align:left;">
+National Park Service areas in Everglades region
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+refuges_clipped
+</td>
+<td style="text-align:left;">
+US Fish and Wildlife Service Refuges
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sfwmd_bound
+</td>
+<td style="text-align:left;">
+South Florida Water Management District Boundary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sloughs
+</td>
+<td style="text-align:left;">
+General delineation of Shark River and Taylor Sloughs within Everglades
+National Park
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Example
+
+``` r
+library(sf)
+library(tmap)
+library(EVERSpatDat)
+
+utm17<-st_crs("EPSG:26917");# CRS for NAD83 UTM17
+
+tmap_mode("plot") 
+
+# Load Package Data
+data(list=datalist$results[,3]);# Loads all the data in the package
+
+ENP <- subset(nps_clipped, UNIT_CODE=="EVER"); # Subsets for just ENP
+```
 
 ### tmap
 
@@ -64,18 +239,7 @@ LTER](https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base)
 `/r_scripts/FCE_map_grayscale_base.R` as an example.
 
 ``` r
-library(sf)
-library(tmap)
-library(EVERSpatDat)
 
-utm17<-st_crs("EPSG:26917");# CRS for NAD83 UTM17
-# Load Package Data
-datalist<-data(package = "EVERSpatDat"); # see a list of the dataset
-data(list=datalist$results[,3]);# Loads all the data in the package
-
-ENP <- subset(nps_clipped, UNIT_CODE=="EVER"); # Subsets for just ENP
-
-tmap_mode("plot") 
 bbox.lims<-st_bbox(c(xmin=461316,xmax=582555,ymin=2748545,ymax=2852277),crs=utm17)
 
 main.map <- tm_shape(FWCShore_clip,projection = 26917,ylim=bbox.lims[c(2,4)],xlim=bbox.lims[c(1,3)]) +
@@ -170,7 +334,7 @@ AOI.poly=raster::extent(bbox.lims)|>
   st_as_sf()
 st_crs(AOI.poly) = utm17
 
-par(family="serif",mar=c(2,2,0.5,0.5),oma=c(1,1,0.75,0.5),plt=c(0.05,0.95,0.05,0.95));
+par(family="serif",mar=c(2,3,0.5,0.5),oma=c(1,1,0.25,0.25),plt=c(0.12,0.95,0.05,0.95));
 layout(matrix(c(1:2),1,2),widths=c(1,0.5))
 
 # Main plot
@@ -179,12 +343,13 @@ plot(st_geometry(FWCShore_clip),
      border="grey60",col = "grey90",
      graticule=st_crs("EPSG:4326"),
      lon=seq(-81.4,-80.2,0.3),lat=seq(24.8,25.8,0.3),
-     axes=T)
+     axes=T,las=1,mgp=c(0,0.6,0))
+
 plot(st_geometry(sloughs),add=T,col=c("grey80","grey59"),border=NA)
 plot(st_geometry(ENP),add=T,lty=2,col=NA)
 plot(st_geometry(US41_US1),add=T,col="red",lwd=1)
 plot(st_geometry(canals),add=T,col="blue",lwd=0.75)
-plot(st_geometry(TTBridge),add=T,col="yellow",lwd=3,lend=2)
+plot(st_geometry(TTBridge),add=T,col="yellow",lwd=4,lend=2)
 plot(st_geometry(SaltExtent),add=T,col="darkturquoise",lwd=3)
 plot(st_geometry(FCELTER_sites),add=T,pch=19,cex=1.25)
 mapmisc::scaleBar(crs=FWCShore_clip,"bottomright",bty="n",cex=1,seg.len=4,outer=F)
@@ -192,12 +357,12 @@ box(lwd=1)
 
 ## Inset map
 # idea from https://stackoverflow.com/a/21570835/5213091
-opar <- par(plt=c(0.05,0.35,0.7,0.95),new=T)
+opar <- par(plt=c(0.12,0.4,0.7,0.95),new=T)
 bbox.lims<-st_bbox(subset(states.shp,stusps=="FL"))
 plot.new()
 plot(st_geometry(states.shp),col="grey60",lwd=0.5,
      ylim=bbox.lims[c(2,4)],xlim=bbox.lims[c(1,3)])
-plot(st_geometry(AOI.poly),add=T,col=NA,border="red",lty=2,lwd=2)
+plot(st_geometry(AOI.poly),add=T,col=NA,border="red",lty=1,lwd=2)
 box(lwd=1)
 
 # if you wanted it on the side with the legend -- specify layout(matrix(c(1,1,2:3),2,2),widths=c(1,0.5))

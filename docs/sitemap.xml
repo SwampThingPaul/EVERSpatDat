@@ -13,6 +13,9 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
+    <loc>/reference/BBSEERBound.html</loc>
+  </url>
+  <url>
     <loc>/reference/canals.html</loc>
   </url>
   <url>
@@ -59,5 +62,8 @@
   </url>
   <url>
     <loc>/reference/WCAs.html</loc>
+  </url>
+  <url>
+    <loc>/reference/WERPBound.html</loc>
   </url>
 </urlset>

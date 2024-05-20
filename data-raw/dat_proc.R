@@ -211,3 +211,22 @@ TribalAreas_all=link|>
 TribalAreas=st_intersection(TribalAreas_all,sfwmd_bound)
 plot(st_geometry(TribalAreas))
 usethis::use_data(TribalAreas,internal=F,overwrite=T)
+
+
+## WERP
+path="C:/Julian_LaCie/_GitHub/WERP_WQ/GIS/WERP_Boundry/WERP.gdb"
+WERPBound=path|>
+  st_read("Polygons")|>
+  st_transform(utm17)
+
+plot(st_geometry(WERPBound))
+usethis::use_data(WERPBound,internal=F,overwrite=T)
+
+## BBSEER
+path="C:/Julian_LaCie/_GitHub/BBSEER_WQ/GIS"
+BBSEERBound=path|>
+  st_read("BBSEER_PRJBND_09092020")|>
+  st_transform(utm17)
+
+plot(st_geometry(BBSEERBound))
+usethis::use_data(BBSEERBound,internal=F,overwrite=T)
