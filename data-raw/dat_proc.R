@@ -109,8 +109,19 @@ plot(st_geometry(SFWMD_Canals))
 plot(st_geometry(subset(SFWMD_Canals,is.na(NAME)==T)),add=T,col="red")
 plot(st_geometry(subset(SFWMD_Canals,is.na(NAME)==F)))
 
+unique(SFWMD_Canals$FLOWLINETYPE)
+unique(SFWMD_Canals$VIEW_PRIORITY)
+unique(SFWMD_Canals$CARTO)
+unique(SFWMD_Canals$EDGETYPE)
+with(subset(SFWMD_Canals,is.na(VIEW_PRIORITY)==F),unique(CARTO))
+
+plot(st_geometry(subset(SFWMD_Canals,VIEW_PRIORITY==1)))
+plot(st_geometry(subset(SFWMD_Canals,VIEW_PRIORITY==2)))
+plot(st_geometry(subset(SFWMD_Canals,is.na(VIEW_PRIORITY)==F&FLOWLINETYPE==2&HYDRO_ORDER=="PRIMARY")))
 plot(st_geometry(subset(SFWMD_Canals,is.na(FLOWLINETYPE)==T)))
 plot(st_geometry(subset(SFWMD_Canals,CARTO==0)))
+
+tm_shape(subset(SFWMD_Canals,is.na(VIEW_PRIORITY)==F&FLOWLINETYPE==2&HYDRO_ORDER=="PRIMARY"))+tm_lines("blue")
 
 ## generalized canals for SFWMD
 fce_canals=paste0(path,"/shapefiles/canals_utm.shp")|>
@@ -201,6 +212,25 @@ WCAs=subset(wmd_basins,NAME%in%prop.vals)
 plot(st_geometry(WCAs))
 usethis::use_data(WCAs,internal=F,overwrite=T)
 
+## SFWMD Water Bodies
+link="https://services1.arcgis.com/sDAPyc2rGRn7vf9B/arcgis/rest/services/AHED_Waterbodies/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+SFWMD_waterbodies=link|>
+  st_read()|>
+  st_transform(utm17)
+
+head(SFWMD_waterbodies)
+unique(subset(SFWMD_waterbodies,WATERBODYTYPE==2)$HYDRO_ORDER)
+
+plot(st_geometry(subset(SFWMD_waterbodies,WATERBODYTYPE==2&HYDRO_ORDER=="PRIMARY")))
+
+exclude.vars=c("C-44 RESERVOIR","LAKE OKEECHOBEE","LAKE HICPOCHEE","ORANGE RIVER","10MI_RES","EAGLE BAY","SHELL CREEK")
+lakes=subset(SFWMD_waterbodies,WATERBODYTYPE==2&HYDRO_ORDER=="PRIMARY"&is.na(NAME)==F&!(NAME%in%exclude.vars))
+
+tm_shape(lakes)+tm_polygons("blue")+
+  tm_shape(fce_canals)+tm_lines("red")
+  # tm_shape(subset(SFWMD_Canals,is.na(VIEW_PRIORITY)==F&FLOWLINETYPE==2&HYDRO_ORDER=="PRIMARY"))+tm_lines("lightblue",lwd=2)
+
+usethis::use_data(lakes,internal=F,overwrite=T)
 
 ## FL Tribal Areas
 link="https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/TIGER_INDIAN_LANDS_AREAS_2020/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"

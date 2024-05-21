@@ -181,6 +181,14 @@ South Florida Water Management District Canals
 </tr>
 <tr>
 <td style="text-align:left;">
+lakes
+</td>
+<td style="text-align:left;">
+Lakes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 nps_clipped
 </td>
 <td style="text-align:left;">
@@ -316,11 +324,34 @@ main.map+map.leg
 
 Or if you prefer the `sf` flavor.
 
+*NOTE:* The code below contains the native R pipe (`|>`, similar to the
+tidyverse `%>%` but no extra packages needed). I don’t usually use pipes
+to tie functions together but recently I’ve began to experiment to
+consolidate code. In the code block below I proivde a pipe and non-pipe
+example for those not comfortable or used to piping functions together
+(its new for me too).
+
+``` r
+## Pipe version
+states.shp=USAboundaries::us_states(resolution ="low")|>
+  as("Spatial")|>
+  st_as_sf()|>
+  st_transform(utm17)|>
+  subset(stusps%in%c("FL","GA","AL"))
+
+## Non-pipe version
+states.shp <- USAboundaries::us_states(resolution ="low")
+states.shp <- as(states.shp,"Spatial")
+states.shp <- st_as_sf(states.shp)
+states.shp <- st_transform(states.shp,utm17)
+states.shp <- subset(states.shp,stusps%in%c("FL","GA","AL"))
+```
+
 ``` r
 library(mapmisc)
 library(USAboundaries)
 
-states.shp=USAboundaries::us_states(resolution ="low")|>
+states.shp <- USAboundaries::us_states(resolution ="low")|>
   as("Spatial")|>
   st_as_sf()|>
   st_transform(utm17)|>
@@ -329,7 +360,8 @@ states.shp=USAboundaries::us_states(resolution ="low")|>
 # bbox.lims=st_bbox(sloughs)
 bbox.lims<-st_bbox(c(xmin=461316,xmax=582555,ymin=2748545,ymax=2852277),crs=utm17)
 
-AOI.poly=raster::extent(bbox.lims)|>
+# Turn bounding bbox.lims into a polygon for plotting
+AOI.poly <- raster::extent(bbox.lims)|>
   as("SpatialPolygons")|>
   st_as_sf()
 st_crs(AOI.poly) = utm17
@@ -389,5 +421,34 @@ legend("center",
 ```
 
 <img src="man/figures/README-FCELTER Map in SF-1.png" style="display: block; margin: auto;" />
+
+### ggplot2
+
+For those that like ggplot style.
+
+``` r
+library(ggplot2)
+library(ggspatial)
+
+theme_set(theme_bw())
+
+bbox.lims<-st_bbox(c(xmin=461316,xmax=582555,ymin=2748545,ymax=2852277),crs=utm17)
+ggplot(data = FWCShore_clip,col = "grey90",border="grey60") +
+  geom_sf() +
+  layer_spatial(sloughs,aes(col=LTER_SLOUG),fill=c("grey80","grey59"),col=NA) + 
+  layer_spatial(ENP,fill=NA,col="black",linetype=2,size=2) + 
+  layer_spatial(US41_US1,fill=NA,col="red",linetype=1,size=2) + 
+  layer_spatial(canals,fill=NA,col="blue",linetype=1,size=2) + 
+  layer_spatial(TTBridge,fill=NA,col="yellow",linetype=1,size=4) + 
+  layer_spatial(SaltExtent,fill=NA,col="darkturquoise",linetype=1,size=3) + 
+  layer_spatial(FCELTER_sites,shape=19,size=3) + 
+  annotation_scale(location = "br", width_hint = 0.25) +
+  annotation_north_arrow(location = "br", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering) + 
+  coord_sf(ylim=bbox.lims[c(2,4)],xlim=bbox.lims[c(1,3)], expand = FALSE,crs=st_crs(26917))
+```
+
+<img src="man/figures/README-ggplotMap-1.png" style="display: block; margin: auto;" />
 
 ------------------------------------------------------------------------
