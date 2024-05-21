@@ -3,7 +3,7 @@
 #' @description
 #' Long term monitoring locaiton within Shark River Slough, Taylor Slough and Florida Bay
 #'
-#' Data Source: FCE LTER repo https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base
+#' Data Source: FCE LTER https://fce-lter.fiu.edu/data/GIS/
 #' \describe{
 #' \item{epsg}{EPSG:26917; NAD83 UTM17N}
 #' }

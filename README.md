@@ -19,8 +19,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 As more and more spatial data is becoming available this package was
 intended to be a single source of general spatial data inspired by the
-Florida Coastal Everglades Long Term Ecological Research Site [FCE
-LTER](https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base) study
+Florida Coastal Everglades Long Term Ecological Research Site ([FCE
+LTER](https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base)) study
 area map repository.
 
 ## Citing package
@@ -366,7 +366,7 @@ AOI.poly <- raster::extent(bbox.lims)|>
   st_as_sf()
 st_crs(AOI.poly) = utm17
 
-par(family="serif",mar=c(2,3,0.5,0.5),oma=c(1,1,0.25,0.25),plt=c(0.12,0.95,0.05,0.95));
+par(family="serif",mar=c(2,3,0.5,0.5),oma=c(1,1,0.1,0.1),plt=c(0.12,0.95,0.05,0.95));
 layout(matrix(c(1:2),1,2),widths=c(1,0.5))
 
 # Main plot

@@ -5,7 +5,7 @@
 #'
 #' For purposes of this package, data is reprojected from WGS84 to UTM17N.
 #'
-#' Data Source: FCE LTER repo https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base/tree/main
+#' Data Source: FCE LTER https://fce-lter.fiu.edu/data/GIS/
 #' \describe{
 #' \item{epsg}{EPSG:26917; NAD83 UTM17N}
 #' }
