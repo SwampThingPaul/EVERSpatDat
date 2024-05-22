@@ -181,6 +181,14 @@ South Florida Water Management District Canals
 </tr>
 <tr>
 <td style="text-align:left;">
+eaa
+</td>
+<td style="text-align:left;">
+SFWMD Everglades Agricultural Area (EAA) Boundary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 lakes
 </td>
 <td style="text-align:left;">

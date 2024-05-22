@@ -15,3 +15,5 @@
 
 ^data-raw\.*$
 ^maps_FCE_sites_grayscale_base-main\.*$
+
+^.*\.txt

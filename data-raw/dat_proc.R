@@ -197,10 +197,13 @@ plot(st_geometry(refuges_clipped))
 usethis::use_data(refuges_clipped,internal=F,overwrite=T)
 
 ## SFWMD WCAs
-link="https://services1.arcgis.com/sDAPyc2rGRn7vf9B/arcgis/rest/services/AHED_Watersheds/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+# link="https://services1.arcgis.com/sDAPyc2rGRn7vf9B/arcgis/rest/services/AHED_Watersheds/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+link="https://geoweb.sfwmd.gov/agsext1/rest/services/WaterManagementSystem/DrainageAreas/FeatureServer/1/query?outFields=*&where=1%3D1&f=geojson"
 wmd_basins=link|>
   st_read()|>
   st_transform(utm17)
+
+plot(st_geometry(wmd_basins))
 
 prop.vals=c(
   "CONSERVATION AREA 1",
@@ -211,6 +214,16 @@ WCAs=subset(wmd_basins,NAME%in%prop.vals)
 
 plot(st_geometry(WCAs))
 usethis::use_data(WCAs,internal=F,overwrite=T)
+
+## EAA
+link="https://services1.arcgis.com/sDAPyc2rGRn7vf9B/arcgis/rest/services/HYMGT_EFA_AREA/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+eaa=link|>
+  st_read()|>
+  st_transform(utm17)
+
+plot(st_geometry(eaa))
+usethis::use_data(eaa,internal=F,overwrite=T)
+
 
 ## SFWMD Water Bodies
 link="https://services1.arcgis.com/sDAPyc2rGRn7vf9B/arcgis/rest/services/AHED_Waterbodies/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
