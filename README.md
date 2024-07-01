@@ -85,6 +85,14 @@ Boundary
 </tr>
 <tr>
 <td style="text-align:left;">
+CSSSSubpops
+</td>
+<td style="text-align:left;">
+Cape Sable Seaside Sparrow Subpopulations
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 EvPA
 </td>
 <td style="text-align:left;">
@@ -113,6 +121,22 @@ LOK
 </td>
 <td style="text-align:left;">
 Generalized Lake Okeechobee Boundary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LOSOM
+</td>
+<td style="text-align:left;">
+Lake Okeechobee System Operating Manual
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LOWRP
+</td>
+<td style="text-align:left;">
+Lake Okeechobee Watershed Restoration Project
 </td>
 </tr>
 <tr>

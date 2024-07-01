@@ -226,7 +226,7 @@ usethis::use_data(eaa,internal=F,overwrite=T)
 
 
 ## SFWMD Water Bodies
-link="https://services1.arcgis.com/sDAPyc2rGRn7vf9B/arcgis/rest/services/AHED_Waterbodies/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+link="https://geoweb.sfwmd.gov/agsext1/rest/services/WaterManagementSystem/Waterbodies/FeatureServer/2/query?outFields=*&where=1%3D1&f=geojson"
 SFWMD_waterbodies=link|>
   st_read()|>
   st_transform(utm17)
@@ -273,3 +273,52 @@ BBSEERBound=path|>
 
 plot(st_geometry(BBSEERBound))
 usethis::use_data(BBSEERBound,internal=F,overwrite=T)
+
+
+
+# CSSS  -------------------------------------------------------------------
+# https://hub.arcgis.com/datasets/bf39292c66a74906b122dfd2ea3c3574/explore?layer=0
+# path="C:/Julian_LaCie/_GISData/DOI/EVER_BIO_CSSsubpop"
+# CSSSSubpops=path|>
+#   st_read("3b3f64ae-76e0-42fd-8bf2-e870963c3469202031-1-14gfy5z.jk1b")|>
+#   st_transform(utm17)
+# https://www.sciencebase.gov/catalog/item/611c57f1d34e40dd9c00029b
+path="C:\\Julian_LaCie\\Models\\EverSparrow\\csss_polygons"
+CSSSSubpops=path|>
+  st_read("csss_polygons")|>
+  st_transform(utm17)
+
+plot(st_geometry(subset(CSSSSubpops,OBJECTID!=0)))
+CSSSSubpops=subset(CSSSSubpops,OBJECTID!=0)
+usethis::use_data(CSSSSubpops,internal=F,overwrite=T)
+
+
+
+# LOSOM study area --------------------------------------------------------
+
+LOSOM="C:/Julian_LaCie/_GitHub/LOSOM_ModelEval/GIS"|>
+  st_read("LOSOM_StudyArea_PJ")|>
+  st_transform(utm17)
+
+plot(st_geometry(LOSOM))
+
+usethis::use_data(LOSOM,internal=F,overwrite=T)
+
+
+# LOWRP -------------------------------------------------------------------
+GIS.path.gen="C:/Julian_LaCie/_GISData"
+watersheds=paste(GIS.path.gen,"AHED_release/AHED_20171102.gdb",sep="/")|>
+  st_read("WATERSHED")|>
+  st_transform(utm17)
+
+wbd=paste(GIS.path.gen,"NHD/WBD/WBD_03_HU2_GPKG.gpkg",sep="/")|>
+  st_read("WBDHU10")|>
+  st_transform(utm17)
+
+LOWRP=subset(wbd,huc10%in%paste0("0309010",c(201,120,301,121,203,202,302,303,304)))
+LOWRP$project="LOWRP"
+LOWRP.dis=aggregate(LOWRP["project"],by=list(diss=LOWRP$project),
+                    FUN=function(x)x[1],do_union=T)
+LOWRP=LOWRP.dis
+
+usethis::use_data(LOWRP,internal=F,overwrite=T)
