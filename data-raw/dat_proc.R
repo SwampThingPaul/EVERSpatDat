@@ -322,3 +322,42 @@ LOWRP.dis=aggregate(LOWRP["project"],by=list(diss=LOWRP$project),
 LOWRP=LOWRP.dis
 
 usethis::use_data(LOWRP,internal=F,overwrite=T)
+
+
+# CEPP --------------------------------------------------------------------
+link="https://services1.arcgis.com/sDAPyc2rGRn7vf9B/arcgis/rest/services/Cerp_Regions/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+CERP=link|>
+  st_read()|>
+  st_transform(utm17)
+
+CERP.ever=subset(CERP,ABBR=="efbk")
+
+plot(st_geometry(subset(wbd,huc10%in%paste0("0309020",c(213,212,211,206)))))
+
+CEPP2=subset(wbd,huc10%in%paste0("0309020",c(213,212,211,206,214,215,301,306,302)))
+CEPP2=st_intersection(CEPP2,EvPA)
+CEPP2$dis=1
+
+plot(st_geometry(CEPP2))
+plot(st_geometry(EvPA),add=T)
+
+CEPP.AOI2=CEPP2|>
+  st_bbox()|>
+  raster::extent()|>
+  as("SpatialPolygons")|>
+  st_as_sf()
+st_crs(CEPP.AOI2) = utm17
+
+plot(st_geometry(CEPP.AOI2),add=T,col=NA)
+
+CEPP2.dis=aggregate(CEPP2["dis"],by=list(diss=CEPP2$dis),
+                    FUN=function(x)x[1],do_union=T)
+CEPP2.dis=st_buffer(CEPP2.dis,1500)
+plot(st_geometry(CEPP2.dis))
+
+CEPP3=st_intersection(CEPP.AOI2,CERP.ever)
+CEPP3=st_buffer(CEPP3,1000)
+plot(st_geometry(CEPP3),add=T,col=NA)
+
+CEPP = CEPP2.dis
+usethis::use_data(CEPP,internal=F,overwrite=T)
