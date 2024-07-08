@@ -170,6 +170,22 @@ LOK="C:/Julian_LaCie/_GISData/SFWMD"|>
 plot(st_geometry(LOK))
 usethis::use_data(LOK,internal=F,overwrite=T)
 
+### LOK Littoral
+LOKLitt="C:/Julian_LaCie/_GISData/LakeOkeechobee/Littoral"|>
+  st_read("LAKEO_LITTORALZONE_VEG2007")|>
+  st_transform(utm17)
+
+LOKLitt= st_buffer(LOKLitt,150)|>
+  st_intersection(LOK)
+LOKLitt$area_sqkm=as.numeric(st_area(LOKLitt)/1e6)
+LOKLitt=LOKLitt[,"area_sqkm"]
+
+plot(st_geometry(LOKLitt))
+usethis::use_data(LOKLitt,internal=F,overwrite=T)
+
+
+
+
 ## NPS boundary
 link="https://services1.arcgis.com/fBc8EJBxQRMcHlei/arcgis/rest/services/NPS_Land_Resources_Division_Boundary_and_Tract_Data_Service/FeatureServer/2/query?outFields=*&where=1%3D1&f=geojson"
 nps_all=link|>
