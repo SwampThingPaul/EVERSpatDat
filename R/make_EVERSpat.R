@@ -12,3 +12,15 @@ make_EVERSpat <- function() {
   class(datalist) <- "EVERSpat"
   return(datalist)
 }
+
+
+#' print a EVERSpat object
+#'
+#' @param x EVERSpat object
+#' @param ... further arguments passed to or from other methods.
+#'
+#' @export
+
+print.EVERSpat <- function(x, ...) {
+  print(x[, 3], ...)
+}
