@@ -56,6 +56,13 @@ Currently there are no plans to send ths package to CRAN. However, in the future
 datalist<-data(package = "EVERSpatDat"); # see a list of the dataset
 ```
 
+or 
+
+```{r dat list2,eval = F}
+datalist <- make_EVERSpat()
+```
+
+
 ```{r ,echo=FALSE}
 # library(flextable)
 # datalist$results[,3:4]|>

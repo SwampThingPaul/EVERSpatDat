@@ -377,3 +377,21 @@ plot(st_geometry(CEPP3),add=T,col=NA)
 
 CEPP = CEPP2.dis
 usethis::use_data(CEPP,internal=F,overwrite=T)
+
+
+
+# South Florida Counties --------------------------------------------------
+library(USAboundaries)
+
+counties_fl <- us_counties(states = "Florida",resolution = "high")
+counties_fl <- st_transform(counties_fl,utm17)
+
+st_geometry(counties_fl)|>plot()
+
+sfwmd_bound
+sfwmd_counties_idx <- st_intersects(st_buffer(sfwmd_bound,-1000),counties_fl)
+counties_fl[unlist(sfwmd_counties_idx),]|>
+  st_geometry()|>
+  plot()
+
+usethis::use_data(counties_fl,internal=F,overwrite=T)

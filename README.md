@@ -30,17 +30,17 @@ citation('EVERSpatDat')
 ## 
 ## To cite package 'EVERSpatDat' in publications use:
 ## 
-##   Paul Julian (2024). EVERSpatDat: Everglades Spatial Data. R package
-##   version 0.1.0. https://github.com/SwampThingPaul/EVERSpatDat
+##   Paul Julian (2025). EVERSpatDat: Everglades Spatial Data. R package
+##   version 0.1.0. https://github.com/swampthingpaul/EVERSpatDat
 ## 
 ## A BibTeX entry for LaTeX users is
 ## 
 ##   @Manual{,
 ##     title = {EVERSpatDat: Everglades Spatial Data},
 ##     author = {Paul Julian},
-##     year = {2024},
+##     year = {2025},
 ##     note = {R package version 0.1.0},
-##     url = {https://github.com/SwampThingPaul/EVERSpatDat},
+##     url = {https://github.com/swampthingpaul/EVERSpatDat},
 ##   }
 ```
 
@@ -60,6 +60,12 @@ the future that could change.
 
 ``` r
 datalist<-data(package = "EVERSpatDat"); # see a list of the dataset
+```
+
+or
+
+``` r
+datalist <- make_EVERSpat()
 ```
 
 <table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
@@ -129,6 +135,14 @@ LOK
 </td>
 <td style="text-align:left;">
 Generalized Lake Okeechobee Boundary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LOKLitt
+</td>
+<td style="text-align:left;">
+Generalized Lake Okeechobee Littoral Zone Boundary
 </td>
 </tr>
 <tr>
@@ -209,6 +223,14 @@ canals
 </td>
 <td style="text-align:left;">
 South Florida Water Management District Canals
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+counties_fl
+</td>
+<td style="text-align:left;">
+Florida County Boundaries
 </td>
 </tr>
 <tr>
