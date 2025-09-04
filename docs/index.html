@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">EVERSpatDat</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
       </span>
     </div>
 
@@ -94,17 +94,17 @@
 <span><span class="co">## </span></span>
 <span><span class="co">## To cite package 'EVERSpatDat' in publications use:</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">##   Paul Julian (2024). EVERSpatDat: Everglades Spatial Data. R package</span></span>
-<span><span class="co">##   version 0.1.0. https://github.com/SwampThingPaul/EVERSpatDat</span></span>
+<span><span class="co">##   Paul Julian (2025). EVERSpatDat: Everglades Spatial Data. R package</span></span>
+<span><span class="co">##   version 0.1.1. https://github.com/swampthingpaul/EVERSpatDat</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## A BibTeX entry for LaTeX users is</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">##   @Manual{,</span></span>
 <span><span class="co">##     title = {EVERSpatDat: Everglades Spatial Data},</span></span>
 <span><span class="co">##     author = {Paul Julian},</span></span>
-<span><span class="co">##     year = {2024},</span></span>
-<span><span class="co">##     note = {R package version 0.1.0},</span></span>
-<span><span class="co">##     url = {https://github.com/SwampThingPaul/EVERSpatDat},</span></span>
+<span><span class="co">##     year = {2025},</span></span>
+<span><span class="co">##     note = {R package version 0.1.1},</span></span>
+<span><span class="co">##     url = {https://github.com/swampthingpaul/EVERSpatDat},</span></span>
 <span><span class="co">##   }</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -122,6 +122,9 @@
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">datalist</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"EVERSpatDat"</span><span class="op">)</span>; <span class="co"># see a list of the dataset</span></span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">datalist</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/make_EVERSpat.html">make_EVERSpat</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <table class="table  lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
 <thead><tr>
 <th style="text-align:left;">
@@ -161,7 +164,6 @@ Cape Sable Seaside Sparrow Subpopulations
 EvPA
 </td>
 <td style="text-align:left;">
-Everglades Protection Area Boundary
 </td>
 </tr>
 <tr>
@@ -170,6 +172,14 @@ FCELTER_sites
 </td>
 <td style="text-align:left;">
 FCE LTER long-term monitoring sites
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLAB
+</td>
+<td style="text-align:left;">
+Florida Bay FATHOM Basins
 </td>
 </tr>
 <tr>
@@ -186,6 +196,14 @@ LOK
 </td>
 <td style="text-align:left;">
 Generalized Lake Okeechobee Boundary
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LOKLitt
+</td>
+<td style="text-align:left;">
+Generalized Lake Okeechobee Littoral Zone Boundary
 </td>
 </tr>
 <tr>
@@ -270,6 +288,14 @@ South Florida Water Management District Canals
 </tr>
 <tr>
 <td style="text-align:left;">
+counties_fl
+</td>
+<td style="text-align:left;">
+Florida County Boundaries
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 eaa
 </td>
 <td style="text-align:left;">
@@ -322,10 +348,10 @@ General delineation of Shark River and Taylor Sloughs within Everglades National
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/r-tmap/tmap" class="external-link">tmap</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SwampThingPaul/EVERSpatDat" class="external-link">EVERSpatDat</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/swampthingpaul/EVERSpatDat" class="external-link">EVERSpatDat</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">utm17</span><span class="op">&lt;-</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_crs.html" class="external-link">st_crs</a></span><span class="op">(</span><span class="st">"EPSG:26917"</span><span class="op">)</span>;<span class="co"># CRS for NAD83 UTM17</span></span>
 <span></span>
@@ -339,7 +365,7 @@ General delineation of Shark River and Taylor Sloughs within Everglades National
 <h3 id="tmap">tmap<a class="anchor" aria-label="anchor" href="#tmap"></a>
 </h3>
 <p>Using the <a href="https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base" class="external-link">FCE LTER</a> <code>/r_scripts/FCE_map_grayscale_base.R</code> as an example.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">bbox.lims</span><span class="op">&lt;-</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_bbox.html" class="external-link">st_bbox</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>xmin<span class="op">=</span><span class="fl">461316</span>,xmax<span class="op">=</span><span class="fl">582555</span>,ymin<span class="op">=</span><span class="fl">2748545</span>,ymax<span class="op">=</span><span class="fl">2852277</span><span class="op">)</span>,crs<span class="op">=</span><span class="va">utm17</span><span class="op">)</span></span>
 <span></span>
@@ -415,7 +441,7 @@ General delineation of Shark River and Taylor Sloughs within Everglades National
 </h3>
 <p>Or if you prefer the <code>sf</code> flavor.</p>
 <p><em>NOTE:</em> The code below contains the native R pipe (<code>|&gt;</code>, similar to the tidyverse <code>%&gt;%</code> but no extra packages needed). I don’t usually use pipes to tie functions together but recently I’ve began to experiment to consolidate code. In the code block below I proivde a pipe and non-pipe example for those not comfortable or used to piping functions together (its new for me too).</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Pipe version</span></span>
 <span><span class="va">states.shp</span><span class="op">=</span><span class="fu">USAboundaries</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/USAboundaries/reference/us_states.html" class="external-link">us_states</a></span><span class="op">(</span>resolution <span class="op">=</span><span class="st">"low"</span><span class="op">)</span><span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/methods/as.html" class="external-link">as</a></span><span class="op">(</span><span class="st">"Spatial"</span><span class="op">)</span><span class="op">|&gt;</span></span>
@@ -429,7 +455,7 @@ General delineation of Shark River and Taylor Sloughs within Everglades National
 <span><span class="va">states.shp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html" class="external-link">st_as_sf</a></span><span class="op">(</span><span class="va">states.shp</span><span class="op">)</span></span>
 <span><span class="va">states.shp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_transform.html" class="external-link">st_transform</a></span><span class="op">(</span><span class="va">states.shp</span>,<span class="va">utm17</span><span class="op">)</span></span>
 <span><span class="va">states.shp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">states.shp</span>,<span class="va">stusps</span><span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"FL"</span>,<span class="st">"GA"</span>,<span class="st">"AL"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">mapmisc</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://lincolnmullen.com/software/usaboundaries/" class="external-link">USAboundaries</a></span><span class="op">)</span></span>
 <span></span>
@@ -506,7 +532,7 @@ General delineation of Shark River and Taylor Sloughs within Everglades National
 <h3 id="ggplot2">ggplot2<a class="anchor" aria-label="anchor" href="#ggplot2"></a>
 </h3>
 <p>For those that like ggplot style.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://paleolimbot.github.io/ggspatial/" class="external-link">ggspatial</a></span><span class="op">)</span></span>
 <span></span>

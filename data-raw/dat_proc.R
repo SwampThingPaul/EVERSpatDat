@@ -395,3 +395,12 @@ counties_fl[unlist(sfwmd_counties_idx),]|>
   plot()
 
 usethis::use_data(counties_fl,internal=F,overwrite=T)
+
+
+
+# FLAB_basins -------------------------------------------------------------
+link <- "C:/Julian_LaCie/_GISData/DOI/ENP/floridaBay_subbasins.shp"
+
+FLAB <- st_read(link)
+
+usethis::use_data(FLAB,internal=F,overwrite=T)

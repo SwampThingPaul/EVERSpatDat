@@ -22,6 +22,9 @@
     <loc>/reference/CEPP.html</loc>
   </url>
   <url>
+    <loc>/reference/counties_fl.html</loc>
+  </url>
+  <url>
     <loc>/reference/CSSSSubpops.html</loc>
   </url>
   <url>
@@ -32,6 +35,9 @@
   </url>
   <url>
     <loc>/reference/FCELTER_sites.html</loc>
+  </url>
+  <url>
+    <loc>/reference/FLAB.html</loc>
   </url>
   <url>
     <loc>/reference/FWCShore_clip.html</loc>
@@ -55,7 +61,13 @@
     <loc>/reference/LOWRP.html</loc>
   </url>
   <url>
+    <loc>/reference/make_EVERSpat.html</loc>
+  </url>
+  <url>
     <loc>/reference/nps_clipped.html</loc>
+  </url>
+  <url>
+    <loc>/reference/print.EVERSpat.html</loc>
   </url>
   <url>
     <loc>/reference/refuges_clipped.html</loc>

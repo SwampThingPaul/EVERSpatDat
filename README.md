@@ -31,7 +31,7 @@ citation('EVERSpatDat')
 ## To cite package 'EVERSpatDat' in publications use:
 ## 
 ##   Paul Julian (2025). EVERSpatDat: Everglades Spatial Data. R package
-##   version 0.1.0. https://github.com/swampthingpaul/EVERSpatDat
+##   version 0.1.1. https://github.com/swampthingpaul/EVERSpatDat
 ## 
 ## A BibTeX entry for LaTeX users is
 ## 
@@ -39,7 +39,7 @@ citation('EVERSpatDat')
 ##     title = {EVERSpatDat: Everglades Spatial Data},
 ##     author = {Paul Julian},
 ##     year = {2025},
-##     note = {R package version 0.1.0},
+##     note = {R package version 0.1.1},
 ##     url = {https://github.com/swampthingpaul/EVERSpatDat},
 ##   }
 ```
@@ -119,6 +119,14 @@ FCELTER_sites
 </td>
 <td style="text-align:left;">
 FCE LTER long-term monitoring sites
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FLAB
+</td>
+<td style="text-align:left;">
+Florida Bay FATHOM Basins
 </td>
 </tr>
 <tr>
