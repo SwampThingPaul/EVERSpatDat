@@ -33,6 +33,7 @@ devtools::document()
 # usethis::use_news_md()
 
 ## Builds package down webpage
+knitr::knit("README.Rmd")
 pkgdown::build_site()
 
 ## Builds package

@@ -94,8 +94,8 @@
 <span><span class="co">## </span></span>
 <span><span class="co">## To cite package 'EVERSpatDat' in publications use:</span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">##   Paul Julian (2025). EVERSpatDat: Everglades Spatial Data. R package</span></span>
-<span><span class="co">##   version 0.1.1. https://github.com/swampthingpaul/EVERSpatDat</span></span>
+<span><span class="co">##   Paul Julian (2025). EVERSpatDat: Everglades Spatial Data. R package version 0.1.1.</span></span>
+<span><span class="co">##   https://github.com/swampthingpaul/EVERSpatDat</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## A BibTeX entry for LaTeX users is</span></span>
 <span><span class="co">## </span></span>
@@ -164,6 +164,7 @@ Cape Sable Seaside Sparrow Subpopulations
 EvPA
 </td>
 <td style="text-align:left;">
+Everglades Protection Area Boundary
 </td>
 </tr>
 <tr>
@@ -312,6 +313,14 @@ Lakes
 </tr>
 <tr>
 <td style="text-align:left;">
+lostman_slough
+</td>
+<td style="text-align:left;">
+Generalized outline of Lostmans Slough
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 nps_clipped
 </td>
 <td style="text-align:left;">
@@ -433,7 +442,7 @@ General delineation of Shark River and Taylor Sloughs within Everglades National
 <span>  <span class="op">)</span> </span>
 <span></span>
 <span><span class="va">main.map</span><span class="op">+</span><span class="va">map.leg</span></span></code></pre></div>
-<p><img src="reference/figures/README-FCELTER%20Map-1.png" style="display: block; margin: auto;"></p>
+<p><img src="reference/figures/README-FCELTER%20Map-1.png" alt="plot of chunk FCELTER Map" style="display: block; margin: auto;"></p>
 <p><br></p>
 </div>
 <div class="section level3">
@@ -526,7 +535,7 @@ General delineation of Shark River and Taylor Sloughs within Everglades National
 <span>       lty<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="fl">2</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>,lwd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>,<span class="fl">1.5</span>,<span class="fl">1</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="fl">1</span>,<span class="fl">4</span>,<span class="fl">2</span><span class="op">)</span>,</span>
 <span>       col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"black"</span>,<span class="st">"blue"</span>,<span class="st">"red"</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="st">"black"</span>,<span class="st">"yellow"</span>,<span class="st">"darkturquoise"</span><span class="op">)</span>,</span>
 <span>       pt.cex<span class="op">=</span><span class="fl">2</span>,ncol<span class="op">=</span><span class="fl">1</span>,cex<span class="op">=</span><span class="fl">0.8</span>,bty<span class="op">=</span><span class="st">"n"</span>,y.intersp<span class="op">=</span><span class="fl">1.2</span>,x.intersp<span class="op">=</span><span class="fl">0.75</span>,xpd<span class="op">=</span><span class="cn">NA</span>,xjust<span class="op">=</span><span class="fl">0.5</span>,yjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-FCELTER%20Map%20in%20SF-1.png" style="display: block; margin: auto;"></p>
+<p><img src="reference/figures/README-FCELTER%20Map%20in%20SF-1.png" alt="plot of chunk FCELTER Map in SF" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level3">
 <h3 id="ggplot2">ggplot2<a class="anchor" aria-label="anchor" href="#ggplot2"></a>
@@ -553,7 +562,7 @@ General delineation of Shark River and Taylor Sloughs within Everglades National
 <span>                         pad_x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html" class="external-link">unit</a></span><span class="op">(</span><span class="fl">0.75</span>, <span class="st">"in"</span><span class="op">)</span>, pad_y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html" class="external-link">unit</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="st">"in"</span><span class="op">)</span>,</span>
 <span>                         style <span class="op">=</span> <span class="va">north_arrow_fancy_orienteering</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">coord_sf</a></span><span class="op">(</span>ylim<span class="op">=</span><span class="va">bbox.lims</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">4</span><span class="op">)</span><span class="op">]</span>,xlim<span class="op">=</span><span class="va">bbox.lims</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">)</span><span class="op">]</span>, expand <span class="op">=</span> <span class="cn">FALSE</span>,crs<span class="op">=</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_crs.html" class="external-link">st_crs</a></span><span class="op">(</span><span class="fl">26917</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-ggplotMap-1.png" style="display: block; margin: auto;"></p>
+<p><img src="reference/figures/README-ggplotMap-1.png" alt="plot of chunk ggplotMap" style="display: block; margin: auto;"></p>
 <hr>
 </div>
 </div>

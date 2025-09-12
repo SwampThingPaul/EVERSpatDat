@@ -404,3 +404,11 @@ link <- "C:/Julian_LaCie/_GISData/DOI/ENP/floridaBay_subbasins.shp"
 FLAB <- st_read(link)
 
 usethis::use_data(FLAB,internal=F,overwrite=T)
+
+# Lostmans -------------------------------------------------------------
+link <- "C:/Julian_LaCie/_GitHub/EVERSpatDat/data-raw/Lostmans/Lost_slough.shp"
+
+lostman_slough <- st_read(link)
+
+usethis::use_data(lostman_slough,internal=F,overwrite=T)
+
