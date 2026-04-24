@@ -1,40 +1,37 @@
----
-output: github_document
-editor_options: 
-  chunk_output_type: console
-always_allow_html: TRUE
----
-
-
 
 # EVERSpatDat
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-<!-- badges: end -->
 
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
 
 ## Table of Contents
 
-* [Introduction](#intro)
-* [Citing package](#cite)
-* [Installation](#install)
-* [Example](#example)
-* [List of Spatial Data](#datalist)
+- [Introduction](#intro)
+- [Citing package](#cite)
+- [Installation](#install)
+- [Example](#example)
+- [List of Spatial Data](#datalist)
 
 ## Introduction
-As more and more spatial data is becoming available this package was intended to be a single source of general spatial data inspired by the Florida Coastal Everglades Long Term Ecological Research Site ([FCE LTER](https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base)) study area map repository.
+
+As more and more spatial data is becoming available this package was
+intended to be a single source of general spatial data inspired by the
+Florida Coastal Everglades Long Term Ecological Research Site ([FCE
+LTER](https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base)) study
+area map repository.
 
 ## Citing package
 
-
-```r
+``` r
 citation('EVERSpatDat')
-## 
 ## To cite package 'EVERSpatDat' in publications use:
 ## 
-##   Paul Julian (2025). EVERSpatDat: Everglades Spatial Data. R package version 0.1.1.
-##   https://github.com/swampthingpaul/EVERSpatDat
+##   Julian P (2025). _EVERSpatDat: Everglades Spatial Data_. R package
+##   version 0.1.1, commit 695e43297d9a33f0025dc26a8e9236bdde0edef5,
+##   <https://github.com/SwampThingPaul/EVERSpatDat>.
 ## 
 ## A BibTeX entry for LaTeX users is
 ## 
@@ -42,161 +39,444 @@ citation('EVERSpatDat')
 ##     title = {EVERSpatDat: Everglades Spatial Data},
 ##     author = {Paul Julian},
 ##     year = {2025},
-##     note = {R package version 0.1.1},
-##     url = {https://github.com/swampthingpaul/EVERSpatDat},
+##     note = {R package version 0.1.1, commit 695e43297d9a33f0025dc26a8e9236bdde0edef5},
+##     url = {https://github.com/SwampThingPaul/EVERSpatDat},
 ##   }
 ```
 
 ## Installation <a name="install"></a>
 
-Development version can be installed from this repo using: 
+Development version can be installed from this repo using:
 
-
-```r
+``` r
 install.packages("devtools");# if you do not have it installed on your PC
 devtools::install_github("SwampThingPaul/EVERSpatDat")
 ```
 
-Currently there are no plans to send ths package to CRAN. However, in the future that could change.  
+Currently there are no plans to send ths package to CRAN. However, in
+the future that could change.
 
 ## List of Spatial Data
 
-```r
+``` r
 datalist<-data(package = "EVERSpatDat"); # see a list of the dataset
 ```
 
-or 
+or
 
-
-```r
+``` r
 datalist <- make_EVERSpat()
 ```
 
+<table class=" lightable-classic" style="color: black; font-family: Cambria; margin-left: auto; margin-right: auto;">
 
-<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;"> Item </th>
-   <th style="text-align:left;"> Title </th>
-  </tr>
- </thead>
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+Item
+</th>
+
+<th style="text-align:left;">
+
+Title
+</th>
+
+</tr>
+
+</thead>
+
 <tbody>
-  <tr>
-   <td style="text-align:left;"> BBSEERBound </td>
-   <td style="text-align:left;"> Biscayne Bay and Southeastern Everglades Ecosystem Restoration Project Boundary </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> CEPP </td>
-   <td style="text-align:left;"> Central Everglades Planning </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> CSSSSubpops </td>
-   <td style="text-align:left;"> Cape Sable Seaside Sparrow Subpopulations </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> EvPA </td>
-   <td style="text-align:left;"> Everglades Protection Area Boundary </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> FCELTER_sites </td>
-   <td style="text-align:left;"> FCE LTER long-term monitoring sites </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> FLAB </td>
-   <td style="text-align:left;"> Florida Bay FATHOM Basins </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> FWCShore_clip </td>
-   <td style="text-align:left;"> Florida Shoreline 1:12000 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> LOK </td>
-   <td style="text-align:left;"> Generalized Lake Okeechobee Boundary </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> LOKLitt </td>
-   <td style="text-align:left;"> Generalized Lake Okeechobee Littoral Zone Boundary </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> LOSOM </td>
-   <td style="text-align:left;"> Lake Okeechobee System Operating Manual </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> LOWRP </td>
-   <td style="text-align:left;"> Lake Okeechobee Watershed Restoration Project </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SFWMD_Projects </td>
-   <td style="text-align:left;"> South Florida Water Management District Projects </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SaltExtent </td>
-   <td style="text-align:left;"> Inland Extent of Saltwater (2018) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> TTBridge </td>
-   <td style="text-align:left;"> Tamiami Trail Bridges </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> TribalAreas </td>
-   <td style="text-align:left;"> Florida Tribal Areas </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> US41_US1 </td>
-   <td style="text-align:left;"> Major Roads for FCE LTER </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> WCAs </td>
-   <td style="text-align:left;"> SFWMD Water Conservation Areas </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> WERPBound </td>
-   <td style="text-align:left;"> Western Everglades Restoration Project Boundary </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> canals </td>
-   <td style="text-align:left;"> South Florida Water Management District Canals </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> counties_fl </td>
-   <td style="text-align:left;"> Florida County Boundaries </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> eaa </td>
-   <td style="text-align:left;"> SFWMD Everglades Agricultural Area (EAA) Boundary </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> lakes </td>
-   <td style="text-align:left;"> Lakes </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> lostman_slough </td>
-   <td style="text-align:left;"> Generalized outline of Lostmans Slough </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> nps_clipped </td>
-   <td style="text-align:left;"> National Park Service areas in Everglades region </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> refuges_clipped </td>
-   <td style="text-align:left;"> US Fish and Wildlife Service Refuges </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> sfwmd_bound </td>
-   <td style="text-align:left;"> South Florida Water Management District Boundary </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> sloughs </td>
-   <td style="text-align:left;"> General delineation of Shark River and Taylor Sloughs within Everglades National Park </td>
-  </tr>
-</tbody>
-</table>
 
+<tr>
+
+<td style="text-align:left;">
+
+BBSEERBound
+</td>
+
+<td style="text-align:left;">
+
+Biscayne Bay and Southeastern Everglades Ecosystem Restoration Project
+Boundary
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+CEPP
+</td>
+
+<td style="text-align:left;">
+
+Central Everglades Planning
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+CSSSSubpops
+</td>
+
+<td style="text-align:left;">
+
+Cape Sable Seaside Sparrow Subpopulations
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+EvPA
+</td>
+
+<td style="text-align:left;">
+
+Everglades Protection Area Boundary
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+FCELTER_sites
+</td>
+
+<td style="text-align:left;">
+
+FCE LTER long-term monitoring sites
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+FLAB
+</td>
+
+<td style="text-align:left;">
+
+Florida Bay FATHOM Basins
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+FWCShore_clip
+</td>
+
+<td style="text-align:left;">
+
+Florida Shoreline 1:12000
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+LOK
+</td>
+
+<td style="text-align:left;">
+
+Generalized Lake Okeechobee Boundary
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+LOKLitt
+</td>
+
+<td style="text-align:left;">
+
+Generalized Lake Okeechobee Littoral Zone Boundary
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+LOSOM
+</td>
+
+<td style="text-align:left;">
+
+Lake Okeechobee System Operating Manual
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+LOWRP
+</td>
+
+<td style="text-align:left;">
+
+Lake Okeechobee Watershed Restoration Project
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SFWMD_Projects
+</td>
+
+<td style="text-align:left;">
+
+South Florida Water Management District Projects
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SaltExtent
+</td>
+
+<td style="text-align:left;">
+
+Inland Extent of Saltwater (2018)
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+TTBridge
+</td>
+
+<td style="text-align:left;">
+
+Tamiami Trail Bridges
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+TribalAreas
+</td>
+
+<td style="text-align:left;">
+
+Florida Tribal Areas
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+US41_US1
+</td>
+
+<td style="text-align:left;">
+
+Major Roads for FCE LTER
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+WCAs
+</td>
+
+<td style="text-align:left;">
+
+SFWMD Water Conservation Areas
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+WERPBound
+</td>
+
+<td style="text-align:left;">
+
+Western Everglades Restoration Project Boundary
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+canals
+</td>
+
+<td style="text-align:left;">
+
+South Florida Water Management District Canals
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+counties_fl
+</td>
+
+<td style="text-align:left;">
+
+Florida County Boundaries
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+eaa
+</td>
+
+<td style="text-align:left;">
+
+SFWMD Everglades Agricultural Area (EAA) Boundary
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+lakes
+</td>
+
+<td style="text-align:left;">
+
+Lakes
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+lostman_slough
+</td>
+
+<td style="text-align:left;">
+
+Generalized outline of Lostmans Slough
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+nps_clipped
+</td>
+
+<td style="text-align:left;">
+
+National Park Service areas in Everglades region
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+refuges_clipped
+</td>
+
+<td style="text-align:left;">
+
+US Fish and Wildlife Service Refuges
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+sfwmd_bound
+</td>
+
+<td style="text-align:left;">
+
+South Florida Water Management District Boundary
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+sloughs
+</td>
+
+<td style="text-align:left;">
+
+General delineation of Shark River and Taylor Sloughs within Everglades
+National Park
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ## Example
 
-
-```r
+``` r
 library(sf)
 library(tmap)
 library(EVERSpatDat)
@@ -210,56 +490,61 @@ data(list=datalist$results[,3]);# Loads all the data in the package
 
 ENP <- subset(nps_clipped, UNIT_CODE=="EVER"); # Subsets for just ENP
 ```
+
 ### tmap
-Using the [FCE LTER](https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base) `/r_scripts/FCE_map_grayscale_base.R` as an example. 
 
+Using the [FCE
+LTER](https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base)
+`/r_scripts/FCE_map_grayscale_base.R` as an example.
 
-```r
+``` r
 
 bbox.lims<-st_bbox(c(xmin=461316,xmax=582555,ymin=2748545,ymax=2852277),crs=utm17)
 
-main.map <- tm_shape(FWCShore_clip,projection = 26917,ylim=bbox.lims[c(2,4)],xlim=bbox.lims[c(1,3)]) +
-  tm_polygons(col="#f0f0f0",border.col="#525252") +
+main.map <- tm_shape(FWCShore_clip,crs = 26917,ylim=bbox.lims[c(2,4)],xlim=bbox.lims[c(1,3)]) +
+  tm_polygons(fill="#f0f0f0",col ="#525252") +
   tm_shape(sloughs[2,]) +
-  tm_polygons(col = "#969696",border.col = "#969696") +
-  tm_add_legend(type = "fill",col = "#969696",border.col = "#969696",
+  tm_polygons(fill = "#969696",col = "#969696") +
+  tm_add_legend(type = "polygons",fill = "#969696",col = "#969696",
                 labels = "Shark River Slough",z = 5 # position in the legend
                 ) +
   tm_shape(sloughs[1,]) +
-    tm_polygons(col = "#cccccc",border.col = "#cccccc") +
-    tm_add_legend(type = "fill", col = "#cccccc",border.col = "#cccccc",
+    tm_polygons(fill = "#cccccc",col = "#cccccc") +
+    tm_add_legend(type = "polygons", fill = "#cccccc",col = "#cccccc",
                   labels = "Taylor Slough",z = 4) +
   tm_shape(ENP) +
     tm_borders(col = "#525252",lwd = 1.5,lty = "dashed") +
-    tm_add_legend(type = "line",lwd = 1.5,lty = "dashed",col = "#525252",
+    tm_add_legend(type = "lines",lwd = 1.5,lty = "dashed",fill = "#525252",
                   labels = "Everglades National Park",z = 6) +
   tm_shape(US41_US1) +
     tm_lines(col = "#cc0000",lwd = 1.5,lty = "solid") +
-    tm_add_legend(type = "line", lwd = 1.5,col = "#cc0000", 
+    tm_add_legend(type = "lines", lwd = 1.5,fill = "#cc0000", 
                   labels = "US Highways",z = 2) +
   tm_shape(TTBridge) +
     tm_lines(col = "#ffff00",lwd = 8,lty = "solid") +
-    tm_add_legend(type = "line", lwd = 6, col = "#ffff00", 
+    tm_add_legend(type = "lines", lwd = 6, fill = "#ffff00", 
                   labels = "Tamiami Trail bridges",z = 7) + 
   tm_shape(canals) +
     tm_lines(col = "#0000cc",lwd = 0.75,lty = "solid") +
-    tm_add_legend(type = "line", lwd = 0.75, col = "#0000cc",
+    tm_add_legend(type = "lines", lwd = 0.75, fill = "#0000cc",
                   labels = "Canals",z = 1) +
   tm_shape(SaltExtent) +
     tm_lines(col = "#00cccc",lwd = 3,lty = "solid") +
-    tm_add_legend(type = "line", lwd = 3, col = "#00cccc", 
+    tm_add_legend(type = "lines", lwd = 3, fill = "#00cccc", 
                   labels = "Saltwater intrusion 2018",z = 9) +
   tm_shape(FCELTER_sites) +
     tm_symbols(size=.25,shape = 19,col = "#000000")
 
 map.leg <- tm_graticules(lines = FALSE,labels.size = 0.8) +
   tm_add_legend(
-    type = "symbol", 
+    type = "symbols", 
     size=.25,
     shape = 19,
-    col = "#000000", 
+    fill = "#000000", 
     labels = "FCE sites",
-    z = 0
+    z = 0,
+    bg.color = "#ffffff",
+    bg.alpha = 0.1
   ) +
   tm_compass(
     north = 0,
@@ -267,14 +552,13 @@ map.leg <- tm_graticules(lines = FALSE,labels.size = 0.8) +
     show.labels = 1,
     cardinal.directions = c("N", "E", "S", "W"),
     lwd = 1) +
-  tm_scale_bar(
-    width = 0.15,
+   tm_scalebar(
     text.size = 0.8,
     color.dark = "black",
     color.light = "white",
     lwd = 1) +
   tm_layout(
-    bg.color = "#ffffff",
+    
     outer.margins = 0.001,
     legend.show = TRUE,
     legend.text.size = 0.9,
@@ -284,21 +568,24 @@ map.leg <- tm_graticules(lines = FALSE,labels.size = 0.8) +
 main.map+map.leg
 ```
 
-<img src="man/figures/README-FCELTER Map-1.png" alt="plot of chunk FCELTER Map" style="display: block; margin: auto;" />
-
+<img src="man/figures/README-FCELTER Map-1.png" alt="" style="display: block; margin: auto;" />
 
 <br>
 
 ### sf
 
-Or if you prefer the `sf` flavor. 
+Or if you prefer the `sf` flavor.
 
-*NOTE:* The code below contains the native R pipe (`|>`, similar to the tidyverse `%>%` but no extra packages needed). I don't usually use pipes to tie functions together but recently I've began to experiment to consolidate code. In the code block below I proivde a pipe and non-pipe example for those not comfortable or used to piping functions together (its new for me too).
+*NOTE:* The code below contains the native R pipe (`|>`, similar to the
+tidyverse `%>%` but no extra packages needed). I don’t usually use pipes
+to tie functions together but recently I’ve began to experiment to
+consolidate code. In the code block below I proivde a pipe and non-pipe
+example for those not comfortable or used to piping functions together
+(its new for me too).
 
-
-```r
+``` r
 ## Pipe version
-states.shp=USAboundaries::us_states(resolution ="low")|>
+states.shp <- USAboundaries::us_states(resolution ="low")|>
   as("Spatial")|>
   st_as_sf()|>
   st_transform(utm17)|>
@@ -312,10 +599,7 @@ states.shp <- st_transform(states.shp,utm17)
 states.shp <- subset(states.shp,stusps%in%c("FL","GA","AL"))
 ```
 
-
-
-
-```r
+``` r
 library(mapmisc)
 library(USAboundaries)
 
@@ -388,29 +672,27 @@ legend("center",
        pt.cex=2,ncol=1,cex=0.8,bty="n",y.intersp=1.2,x.intersp=0.75,xpd=NA,xjust=0.5,yjust=0.5)
 ```
 
-<img src="man/figures/README-FCELTER Map in SF-1.png" alt="plot of chunk FCELTER Map in SF" style="display: block; margin: auto;" />
-
+<img src="man/figures/README-FCELTER Map in SF-1.png" alt="" style="display: block; margin: auto;" />
 
 ### ggplot2
 
-For those that like ggplot style. 
+For those that like ggplot style.
 
-
-```r
+``` r
 library(ggplot2)
 library(ggspatial)
 
 theme_set(theme_bw())
 
 bbox.lims<-st_bbox(c(xmin=461316,xmax=582555,ymin=2748545,ymax=2852277),crs=utm17)
-ggplot(data = FWCShore_clip,col = "grey90",border="grey60") +
-  geom_sf() +
+ggplot(data = FWCShore_clip) +
+  geom_sf(fill = "grey90",color="grey60") +
   layer_spatial(sloughs,aes(col=LTER_SLOUG),fill=c("grey80","grey59"),col=NA) + 
-  layer_spatial(ENP,fill=NA,col="black",linetype=2,size=2) + 
-  layer_spatial(US41_US1,fill=NA,col="red",linetype=1,size=2) + 
-  layer_spatial(canals,fill=NA,col="blue",linetype=1,size=2) + 
+  layer_spatial(ENP,fill=NA,col="black",linetype=2,size=1) + 
+  layer_spatial(US41_US1,fill=NA,col="red",linetype=1,size=1) + 
+  layer_spatial(canals,fill=NA,col="blue",linetype=1,size=1) + 
   layer_spatial(TTBridge,fill=NA,col="yellow",linetype=1,size=4) + 
-  layer_spatial(SaltExtent,fill=NA,col="darkturquoise",linetype=1,size=3) + 
+  layer_spatial(SaltExtent,fill=NA,col="darkturquoise",linetype=1,size=1.5) + 
   layer_spatial(FCELTER_sites,shape=19,size=3) + 
   annotation_scale(location = "br", width_hint = 0.25) +
   annotation_north_arrow(location = "br", which_north = "true", 
@@ -419,6 +701,6 @@ ggplot(data = FWCShore_clip,col = "grey90",border="grey60") +
   coord_sf(ylim=bbox.lims[c(2,4)],xlim=bbox.lims[c(1,3)], expand = FALSE,crs=st_crs(26917))
 ```
 
-<img src="man/figures/README-ggplotMap-1.png" alt="plot of chunk ggplotMap" style="display: block; margin: auto;" />
+<img src="man/figures/README-ggplotMap-1.png" alt="" style="display: block; margin: auto;" />
 
-***
+------------------------------------------------------------------------
