@@ -1,0 +1,7 @@
+{
+    "installOptions": {
+        "installFromRepository": true,
+        "libraryPath": "C:/Users/PaulJulian/AppData/Local/Programs/R/R-4.5.2/library",
+        "installDependencies": true
+    }
+}
