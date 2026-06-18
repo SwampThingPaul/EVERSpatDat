@@ -1,105 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/BBSEERBound.html</loc>
-  </url>
-  <url>
-    <loc>/reference/canals.html</loc>
-  </url>
-  <url>
-    <loc>/reference/CEPP.html</loc>
-  </url>
-  <url>
-    <loc>/reference/counties_fl.html</loc>
-  </url>
-  <url>
-    <loc>/reference/CSSSSubpops.html</loc>
-  </url>
-  <url>
-    <loc>/reference/eaa.html</loc>
-  </url>
-  <url>
-    <loc>/reference/EvPA.html</loc>
-  </url>
-  <url>
-    <loc>/reference/FCELTER_sites.html</loc>
-  </url>
-  <url>
-    <loc>/reference/FLAB.html</loc>
-  </url>
-  <url>
-    <loc>/reference/FWCShore_clip.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/lakes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/LOK.html</loc>
-  </url>
-  <url>
-    <loc>/reference/LOKLitt.html</loc>
-  </url>
-  <url>
-    <loc>/reference/LOSOM.html</loc>
-  </url>
-  <url>
-    <loc>/reference/lostman_slough.html</loc>
-  </url>
-  <url>
-    <loc>/reference/LOWRP.html</loc>
-  </url>
-  <url>
-    <loc>/reference/make_EVERSpat.html</loc>
-  </url>
-  <url>
-    <loc>/reference/nps_clipped.html</loc>
-  </url>
-  <url>
-    <loc>/reference/print.EVERSpat.html</loc>
-  </url>
-  <url>
-    <loc>/reference/refuges_clipped.html</loc>
-  </url>
-  <url>
-    <loc>/reference/SaltExtent.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sfwmd_bound.html</loc>
-  </url>
-  <url>
-    <loc>/reference/SFWMD_Projects.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sloughs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/TribalAreas.html</loc>
-  </url>
-  <url>
-    <loc>/reference/TTBridge.html</loc>
-  </url>
-  <url>
-    <loc>/reference/US41_US1.html</loc>
-  </url>
-  <url>
-    <loc>/reference/WCAs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/WERPBound.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/news/index.html</loc></url>
+<url><loc>/reference/BBSEERBound.html</loc></url>
+<url><loc>/reference/canals.html</loc></url>
+<url><loc>/reference/CEPP.html</loc></url>
+<url><loc>/reference/counties_fl.html</loc></url>
+<url><loc>/reference/CSSSSubpops.html</loc></url>
+<url><loc>/reference/eaa.html</loc></url>
+<url><loc>/reference/EvPA.html</loc></url>
+<url><loc>/reference/FCELTER_sites.html</loc></url>
+<url><loc>/reference/FLAB.html</loc></url>
+<url><loc>/reference/FWCShore_clip.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/JEM_E4C_region.html</loc></url>
+<url><loc>/reference/lakes.html</loc></url>
+<url><loc>/reference/LOK.html</loc></url>
+<url><loc>/reference/LOKLitt.html</loc></url>
+<url><loc>/reference/LOSOM.html</loc></url>
+<url><loc>/reference/lostman_slough.html</loc></url>
+<url><loc>/reference/LOWRP.html</loc></url>
+<url><loc>/reference/make_EVERSpat.html</loc></url>
+<url><loc>/reference/nps_clipped.html</loc></url>
+<url><loc>/reference/print.EVERSpat.html</loc></url>
+<url><loc>/reference/refuges_clipped.html</loc></url>
+<url><loc>/reference/SaltExtent.html</loc></url>
+<url><loc>/reference/sfwmd_bound.html</loc></url>
+<url><loc>/reference/SFWMD_Projects.html</loc></url>
+<url><loc>/reference/sloughs.html</loc></url>
+<url><loc>/reference/TribalAreas.html</loc></url>
+<url><loc>/reference/TTBridge.html</loc></url>
+<url><loc>/reference/US41_US1.html</loc></url>
+<url><loc>/reference/WCAs.html</loc></url>
+<url><loc>/reference/WERPBound.html</loc></url>
 </urlset>
+

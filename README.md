@@ -29,18 +29,17 @@ area map repository.
 citation('EVERSpatDat')
 ## To cite package 'EVERSpatDat' in publications use:
 ## 
-##   Julian P (2025). _EVERSpatDat: Everglades Spatial Data_. R package
-##   version 0.1.1, commit 695e43297d9a33f0025dc26a8e9236bdde0edef5,
-##   <https://github.com/SwampThingPaul/EVERSpatDat>.
+##   Julian P (2026). _EVERSpatDat: Everglades Spatial Data_. R package
+##   version 0.1.2, <https://github.com/swampthingpaul/EVERSpatDat>.
 ## 
 ## A BibTeX entry for LaTeX users is
 ## 
 ##   @Manual{,
 ##     title = {EVERSpatDat: Everglades Spatial Data},
 ##     author = {Paul Julian},
-##     year = {2025},
-##     note = {R package version 0.1.1, commit 695e43297d9a33f0025dc26a8e9236bdde0edef5},
-##     url = {https://github.com/SwampThingPaul/EVERSpatDat},
+##     year = {2026},
+##     note = {R package version 0.1.2},
+##     url = {https://github.com/swampthingpaul/EVERSpatDat},
 ##   }
 ```
 
@@ -185,6 +184,20 @@ FWCShore_clip
 <td style="text-align:left;">
 
 Florida Shoreline 1:12000
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+JEM_E4C_region
+</td>
+
+<td style="text-align:left;">
+
+Joint Ecosystem Modeling Everglades Forecast Regions
 </td>
 
 </tr>

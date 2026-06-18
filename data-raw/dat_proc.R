@@ -412,3 +412,14 @@ lostman_slough <- st_read(link)
 
 usethis::use_data(lostman_slough,internal=F,overwrite=T)
 
+
+
+# JEM Ever4Cast Regions ---------------------------------------------------
+link <- "C:/Julian_LaCie/JEM/Ever4Cast/GIS/E4C_Regions_multipart.shp"
+
+JEM_E4C_region <- st_read(link)
+JEM_E4C_region|>st_geometry()|>plot()
+
+usethis::use_data(JEM_E4C_region,internal=F,overwrite=T)
+
+
